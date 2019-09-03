@@ -1,4 +1,3 @@
-console.log("in here");
 
 // fetch("http://puzzle.mead.io/puzzle")
 //   .then(response => {
@@ -27,7 +26,8 @@ formSelector.addEventListener("submit", e => {
           const { forecast, location, address } = data;
           console.log(forecast, location, address);
           para1.textContent = `Location - ${location}`;
-          para2.textContent = `Forecast - ${forecast.summary}
+          para2.textContent = `
+            Forecast - ${forecast.summary}
             temperature - ${forecast.temperature}
           `;
         }

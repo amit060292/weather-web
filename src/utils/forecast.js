@@ -8,11 +8,11 @@ const getWeather = ({ latitude, longitude }, callback) => {
     },
     (error, response, body) => {
       if (!error && response.statusCode === 200) {
-        const { currently } = body;
+        const { currently, daily } = body;
         callback(undefined, {
           temperature: currently.temperature,
           apprentTemperature: currently.apparentTemperature,
-          summary: currently.summary
+          summary: daily.summary
         });
       } else if (response.statusCode === 400) {
         callback("error occured");
